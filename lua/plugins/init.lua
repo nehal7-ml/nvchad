@@ -12,6 +12,12 @@ return {
       require "configs.lspconfig"
     end,
   },
+  {
+      "supermaven-inc/supermaven-nvim",
+      config = function()
+        require("supermaven-nvim").setup({})
+      end,
+  },
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
