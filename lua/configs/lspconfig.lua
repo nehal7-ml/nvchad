@@ -4,7 +4,26 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html","ast_grep", "cssls", "lua_ls","vtsls","tailwindcss", "pylyzer" }
+local servers = {
+  html = {},
+  awk_ls = {},
+  bashls = {},
+  cssls ={},
+  tailwindcss={},
+  vtsls = {},
+  svelete ={},
+  pyright = {
+    settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          typeCheckingMode = "basic",
+        },
+      },
+    },
+  },
+}
+
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -22,3 +41,4 @@ end
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
