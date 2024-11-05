@@ -1,15 +1,16 @@
-
-local supermaven = require("supermaven-nvim")
-supermaven.setup({
- keymaps = {
+local supermaven = require "supermaven-nvim"
+supermaven.setup {
+  -- or { "cpp", }
+  --
+  --
+  keymaps = {
     accept_suggestion = "<Tab>",
     clear_suggestion = "<C-]>",
     accept_word = "<C-j>",
   },
-  -- or { "cpp", }
   color = {
-    suggestion_color = "#ffffff",
-    cterm = 243,
+    suggestion_color = "#969696",
+    cterm = 244,
   },
   log_level = "info", -- set to "off" to disable logging completely
   disable_inline_completion = false, -- disables inline completion for use with cmp
@@ -17,5 +18,4 @@ supermaven.setup({
   condition = function()
     return false
   end,
-})
-
+}

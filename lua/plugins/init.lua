@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -19,6 +19,24 @@ return {
       require "configs.supermaven"
     end,
   },
+  {
+    "ziontee113/color-picker.nvim",
+    config = function()
+      require "configs.colorPicker"
+    end,
+  },
+  {
+    "startup-nvim/startup.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+    },
+    config = function()
+      require "configs.startup"
+    end,
+  },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
