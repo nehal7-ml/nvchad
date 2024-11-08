@@ -1,9 +1,6 @@
 -- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
-
 local lspconfig = require "lspconfig"
 
--- EXAMPLE
 local servers = {
   html = {},
   lua_ls = {},
@@ -15,6 +12,7 @@ local servers = {
   prismals = {},
   eslint = {},
   pyright = {},
+  astro = {},
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"

@@ -1,4 +1,11 @@
 return {
+  -- load luasnips + cmp related in insert mode only
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    opts = require "configs.cmp",
+  },
+
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
@@ -12,6 +19,7 @@ return {
       require "configs.lspconfig"
     end,
   },
+
   {
     "supermaven-inc/supermaven-nvim",
     lazy = false,
@@ -25,18 +33,6 @@ return {
       require "configs.colorPicker"
     end,
   },
-  {
-    "startup-nvim/startup.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
-    },
-    config = function()
-      require "configs.startup"
-    end,
-  },
-
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
