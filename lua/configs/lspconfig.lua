@@ -13,6 +13,8 @@ local servers = {
   eslint = {},
   pyright = {},
   astro = {},
+  emmet_ls = {},
+  biome = {},
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"
