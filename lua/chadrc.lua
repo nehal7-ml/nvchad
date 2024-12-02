@@ -4,13 +4,45 @@
 
 local M = {}
 
-M.base46 = {
-  theme = "nightowl",
+local CM = {}
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+CM.base_30 = {
+  nord_blue = "#80a8fd",
+  blue = "#7aa2f7",
+  purple = "#bb9af7",
+  dark_purple = "#9d7cd8",
+}
+
+M.base46 = {
+  theme = "tokyonight",
+  changed_themes = {
+    tokyonight = {
+      base_30 = {
+        purple = "#bb9af7",
+        dark_purple = "#9d7cd8",
+      },
+      polish_hl = {
+        treesitter = {
+          ["@keyword"] = { fg = CM.base_30.purple },
+          ["@variable.parameter"] = { fg = "#569CD6" },
+          ["@variable"] = { fg = "#dee1e6" },
+          ["@variable.member.key"] = { fg = "#dee1e6" },
+          ["@keyword.return"] = { fg = CM.base_30.purple },
+          ["@keyword.function"] = { fg = CM.base_30.nord_blue },
+          ["@constant"] = { fg = CM.base_30.blue },
+          ["@keyword.import"] = { fg = CM.base_30.purple },
+        },
+      },
+    },
+  },
+}
+--
+-- M.hl_override = {
+--   ["@keyword"] = { fg = M.base_30.blue },
+-- }
+M.hl_override = {
+  Comment = { italic = true },
+  ["@comment"] = { italic = true },
 }
 
 M.nvdash = {
