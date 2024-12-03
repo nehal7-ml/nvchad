@@ -1,4 +1,13 @@
 return {
+  --fugitive
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+    cmd = "Git",
+    config = function()
+      require "configs.fugitive"
+    end,
+  },
   -- auto session plugin
   {
     "rmagatti/auto-session",
