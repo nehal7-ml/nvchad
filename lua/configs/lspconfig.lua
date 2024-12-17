@@ -1,6 +1,10 @@
 -- load defaults i.e lua_lsp
 local lspconfig = require "lspconfig"
-
+vim.diagnostic.config {
+  virtual_text = false,
+  -- signs = false,
+  -- underline = false,
+}
 local servers = {
   html = {},
   lua_ls = {},

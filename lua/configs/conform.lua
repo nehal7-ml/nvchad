@@ -8,6 +8,9 @@ local options = {
     json = { "prettier" },
     yaml = { "prettier" },
     markdown = { "prettier" },
+    astro = { "prettier" },
+    svelte = { "prettier" },
+    vue = { "prettier" },
   },
 
   format_on_save = {

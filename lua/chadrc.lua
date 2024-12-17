@@ -7,6 +7,7 @@ local M = {}
 local CM = {}
 
 CM.base_30 = {
+  cyan = "#aad2ff",
   nord_blue = "#80a8fd",
   blue = "#7aa2f7",
   purple = "#bb9af7",
@@ -14,9 +15,9 @@ CM.base_30 = {
 }
 
 M.base46 = {
-  theme = "tokyonight",
+  theme = "nightowl",
   changed_themes = {
-    tokyonight = {
+    nightowl = {
       base_30 = {
         purple = "#bb9af7",
         dark_purple = "#9d7cd8",
@@ -26,7 +27,7 @@ M.base46 = {
           ["@keyword"] = { fg = CM.base_30.purple },
           ["@variable.parameter"] = { fg = "#569CD6" },
           ["@variable"] = { fg = "#dee1e6" },
-          ["@variable.member.key"] = { fg = "#dee1e6" },
+          ["@variable.member.key"] = { fg = CM.base_30.cyan },
           ["@keyword.return"] = { fg = CM.base_30.purple },
           ["@keyword.function"] = { fg = CM.base_30.nord_blue },
           ["@constant"] = { fg = CM.base_30.blue },

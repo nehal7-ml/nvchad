@@ -45,7 +45,27 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  -- lsp_lines
+  -- {
+  --   "Maan2003/lsp_lines.nvim",
+  --   event = "LspAttach",
+  --   config = function()
+  --     require "configs.lspLines"
+  --   end,
+  -- },
+  -- {
+  --   "nvimdev/lspsaga.nvim",
+  --   event = "LspAttach",
+  --   config = function()
+  --     require "configs.lspsagaConfig"
+  --   end,
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter", -- optional
+  --     "nvim-tree/nvim-web-devicons", -- optional
+  --   },
+  -- },
+  --
+  -- AI auto complete
   {
     "supermaven-inc/supermaven-nvim",
     lazy = false,
@@ -77,13 +97,8 @@ return {
     end,
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = require "configs.treesitter",
+  },
 }
