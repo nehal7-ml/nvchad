@@ -15,7 +15,10 @@ local servers = {
   svelte = {},
   prismals = {},
   eslint = {},
-  pyright = {},
+  ruff = {},
+  pyright = {
+    disableOrganizeImports = true,
+  },
   astro = {},
   emmet_ls = {},
   biome = {},
