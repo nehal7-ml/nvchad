@@ -46,6 +46,12 @@ M.hl_override = {
   ["@comment"] = { italic = true },
 }
 
+M.ui = {
+  tabufline = {
+    enabled = true,
+  },
+}
+
 M.nvdash = {
   load_on_startup = true,
   header = {

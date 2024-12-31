@@ -1,9 +1,18 @@
 require "nvchad.mappings"
 
 -- add yours here
-
-local map = vim.keymap.set
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
+  if opts then
+    if opts.desc then
+      opts.desc = "keymaps.lua: " .. opts.desc
+    end
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
+end
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
+map("n", "<F5>", ":bufdo e <CR>", { desc = "checktime" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
