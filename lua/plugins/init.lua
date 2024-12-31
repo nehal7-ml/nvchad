@@ -1,5 +1,5 @@
 return {
-  --fugitive
+  -- --fugitive
   {
     "tpope/vim-fugitive",
     lazy = false,
