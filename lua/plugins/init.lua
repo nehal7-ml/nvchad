@@ -1,13 +1,32 @@
 return {
-  -- --fugitive
   {
-    "tpope/vim-fugitive",
+    "nvim-treesitter/nvim-treesitter",
+    opts = require "configs.treesitter",
+  },
+
+  -- neo scrolling
+  {
+    "karb94/neoscroll.nvim",
     lazy = false,
-    cmd = "Git",
+    opts = require "configs.neoscroll",
+  },
+
+  {
+    "sindrets/diffview.nvim",
+    lazy = false,
     config = function()
-      require "configs.fugitive"
+      require "configs.diffview"
     end,
   },
+  -- -- --fugitive
+  -- {
+  --   "tpope/vim-fugitive",
+  --   lazy = false,
+  --   cmd = "Git",
+  --   config = function()
+  --     require "configs.fugitive"
+  --   end,
+  -- },
   -- auto session plugin
   {
     "rmagatti/auto-session",
@@ -45,6 +64,13 @@ return {
       require "configs.lspconfig"
     end,
   },
+
+  {
+    "folke/trouble.nvim",
+    cmd = (require "configs.trouble").cmd,
+    otps = (require "configs.trouble").opts,
+    keys = (require "configs.trouble").keys,
+  },
   -- lsp_lines
   -- {
   --   "Maan2003/lsp_lines.nvim",
@@ -74,9 +100,10 @@ return {
     end,
   },
   {
-    "ziontee113/color-picker.nvim",
+    "uga-rosa/ccc.nvim",
+    lazy = false,
     config = function()
-      require "colorPickernfigs.colorPicker"
+      require "configs.colorPicker"
     end,
   },
   {
@@ -95,10 +122,5 @@ return {
     config = function()
       require "configs.diffview"
     end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = require "configs.treesitter",
   },
 }
