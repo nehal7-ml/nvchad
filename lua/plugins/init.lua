@@ -71,6 +71,20 @@ return {
     otps = (require "configs.trouble").opts,
     keys = (require "configs.trouble").keys,
   },
+  -- Harpoon
+  {
+    "ThePrimeagen/harpoon",
+    lazy = false,
+    branch = "harpoon2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require "configs.harpoon"
+    end,
+  },
+
   -- lsp_lines
   -- {
   --   "Maan2003/lsp_lines.nvim",
