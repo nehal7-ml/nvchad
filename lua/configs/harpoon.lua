@@ -26,7 +26,7 @@ end
 vim.keymap.set("n", "<C-p>", function()
   harpoon:list():prev()
 end)
-vim.keymap.set("n", "<C-o>", function()
+vim.keymap.set("n", "<C-i>", function()
   harpoon:list():next()
 end)
 
