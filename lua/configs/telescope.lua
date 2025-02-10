@@ -1,6 +1,6 @@
 local telescope = require "telescope"
 local actions = require "telescope.actions"
-
+local builtin = require "telescope.builtin"
 -- https://github.com/MagicDuck/grug-far.nvim/pull/305
 local is_windows = vim.fn.has "win64" == 1 or vim.fn.has "win32" == 1
 local vimfnameescape = vim.fn.fnameescape
@@ -24,6 +24,11 @@ local select_default = function(prompt_bufnr)
   return result
 end
 
+-- set telescope key maps
+
+vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "Resume Telescope" })
+
+-- telescope setup
 telescope.setup {
   defaults = {
     layout_config = {
@@ -36,13 +41,19 @@ telescope.setup {
     },
     extensions_list = { "themes", "terms" },
     extensions = {},
+    cache_picker = {
+      num_pickers = 5,
+    },
     mappings = {
       i = {
         ["<cr>"] = select_default,
+        ["<C-Down>"] = actions.cycle_history_next,
+        ["<C-Up>"] = actions.cycle_history_prev,
       },
+
       n = {
         ["<cr>"] = select_default,
-        ["q"] = require("telescope.actions").close,
+        ["q"] = actions.close,
       },
     },
   },
