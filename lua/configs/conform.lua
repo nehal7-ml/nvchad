@@ -1,25 +1,40 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettier" },
-    html = { "prettier" },
-    js = { "prettier" },
-    ts = { "prettier" },
-    json = { "prettier" },
-    yaml = { "prettier" },
+    css = { "prettier", "eslint_d" },
+    html = { "prettier", "eslint_d" },
+    js = { "prettier", "eslint_d" },
+    ts = { "prettier", "eslint_d" },
+    json = { "prettier", "eslint_d" },
+    yaml = { "prettier", "eslint_d" },
     markdown = { "prettier" },
     astro = { "prettier" },
     svelte = { "prettier" },
     vue = { "prettier" },
-    python = { "isort", "ruff_format" },
+    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+    php = { "php-cs-fixer" },
   },
+
   opts = {
     -- These options will be default config for formatters
     prettier = {},
   },
-  format_on_save = {
+  formatters = {
+    ["php-cs-fixer"] = {
+      command = "php-cs-fixer",
+      args = {
+        "fix",
+        "$FILENAME",
+        "--config=/your/path/to/config/file/[filename].php",
+        "--allow-risky=yes", -- if you have risky stuff in config, if not you dont need it.
+      },
+      stdin = false,
+    },
+  },
+  format_after_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
+    async = true,
+    timeout_ms = 2500,
     lsp_fallback = true,
   },
 }
