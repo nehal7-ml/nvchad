@@ -67,8 +67,8 @@ return {
 
   {
     "folke/trouble.nvim",
+    opts = (require "configs.trouble").opts,
     cmd = (require "configs.trouble").cmd,
-    otps = (require "configs.trouble").opts,
     keys = (require "configs.trouble").keys,
   },
   -- Harpoon
