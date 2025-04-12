@@ -114,13 +114,6 @@ return {
     end,
   },
   {
-    "uga-rosa/ccc.nvim",
-    lazy = false,
-    config = function()
-      require "configs.colorPicker"
-    end,
-  },
-  {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     ---@module "ibl"
