@@ -22,13 +22,13 @@ for i = 1, 8 do
   end, { desc = "Harpoon: Select file " .. i })
 end
 
--- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-p>", function()
-  harpoon:list():prev()
-end)
-vim.keymap.set("n", "<C-i>", function()
-  harpoon:list():next()
-end)
+-- -- Toggle previous & next buffers stored within Harpoon list
+-- vim.keymap.set("n", "<C-p>", function()
+--   harpoon:list():prev()
+-- end)
+-- vim.keymap.set("n", "<C-I>", function()
+--   harpoon:list():next()
+-- end)
 
 -- basic telescope configuration
 local conf = require("telescope.config").values

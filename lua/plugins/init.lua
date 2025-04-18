@@ -11,22 +11,6 @@ return {
     opts = require "configs.neoscroll",
   },
 
-  {
-    "sindrets/diffview.nvim",
-    lazy = false,
-    config = function()
-      require "configs.diffview"
-    end,
-  },
-  -- -- --fugitive
-  -- {
-  --   "tpope/vim-fugitive",
-  --   lazy = false,
-  --   cmd = "Git",
-  --   config = function()
-  --     require "configs.fugitive"
-  --   end,
-  -- },
   -- auto session plugin
   {
     "rmagatti/auto-session",
@@ -85,27 +69,6 @@ return {
     end,
   },
 
-  -- lsp_lines
-  -- {
-  --   "Maan2003/lsp_lines.nvim",
-  --   event = "LspAttach",
-  --   config = function()
-  --     require "configs.lspLines"
-  --   end,
-  -- },
-  -- {
-  --   "nvimdev/lspsaga.nvim",
-  --   event = "LspAttach",
-  --   config = function()
-  --     require "configs.lspsagaConfig"
-  --   end,
-  --   dependencies = {
-  --     "nvim-treesitter/nvim-treesitter", -- optional
-  --     "nvim-tree/nvim-web-devicons", -- optional
-  --   },
-  -- },
-  --
-  -- AI auto complete
   {
     "supermaven-inc/supermaven-nvim",
     lazy = false,

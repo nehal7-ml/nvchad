@@ -15,4 +15,8 @@ end
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<F5>", ":bufdo e <CR>", { desc = "checktime" })
 
+--- unMap Tab used by tabufline
+vim.cmd ":unmap <Tab>"
+
+-- map("n", "<leader>ca", "vim.lsp.buf.code_action()", { desc = "code action" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
