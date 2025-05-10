@@ -13,8 +13,8 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("n", "<F5>", ":bufdo e <CR>", { desc = "checktime" })
-
+map("n", "<F5>", ":bufdo e <CR>", { desc = "Edit all buffers" })
+map("n", "<leader>bd", ":bufdo bd <CR>", { desc = "Delete all buffers" })
 --- unMap Tab used by tabufline
 vim.cmd ":unmap <Tab>"
 
