@@ -1,5 +1,9 @@
 return {
   {
+    "lewis6991/gitsigns.nvim",
+    enabled = false,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = require "configs.treesitter",
   },
@@ -9,6 +13,7 @@ return {
     "karb94/neoscroll.nvim",
     lazy = false,
     opts = require "configs.neoscroll",
+    enabled = false,
   },
 
   -- auto session plugin
@@ -92,6 +97,13 @@ return {
 
     config = function()
       require "configs.diffview"
+    end,
+  },
+  {
+    "uga-rosa/ccc.nvim",
+    lazy = false,
+    config = function()
+      require "configs.colorPicker"
     end,
   },
 }

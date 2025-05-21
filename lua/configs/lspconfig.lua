@@ -15,7 +15,6 @@ local servers = {
   vtsls = {},
   svelte = {},
   prismals = {},
-  eslint = {},
   pylsp = {
     settings = {
       pylsp = {
@@ -47,6 +46,7 @@ local servers = {
   astro = {},
   emmet_ls = {},
   biome = {},
+  jsonls = {},
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"

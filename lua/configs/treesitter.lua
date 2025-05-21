@@ -1,5 +1,7 @@
 return {
-
+  install = {
+    compilers = { "zig" },
+  },
   ensure_installed = {
     "vim",
     "lua",
