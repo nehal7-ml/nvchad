@@ -2,6 +2,7 @@
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 -- Please read that file to know all available options :(
 
+local utils = require "lib.utils"
 local M = {}
 
 local CM = {}
@@ -49,6 +50,25 @@ M.hl_override = {
 M.ui = {
   tabufline = {
     enabled = true,
+    lazyload = true,
+  },
+  statusline = {
+
+    enabled = true,
+    theme = "vscode_colored",
+    separator_style = "round",
+    order = { "mode", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+    modules = {
+      relativepath = function()
+        local path = vim.api.nvim_buf_get_name(utils.stbufnr())
+
+        if path == "" then
+          return ""
+        end
+
+        return "%#St_relativepath#  .\\" .. vim.fn.expand "%:.:h" .. "\\"
+      end,
+    },
   },
 }
 

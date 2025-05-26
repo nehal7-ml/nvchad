@@ -1,5 +1,4 @@
 require "nvchad.mappings"
-
 -- add yours here
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
@@ -17,6 +16,12 @@ map("n", "<F5>", ":bufdo e <CR>", { desc = "Edit all buffers" })
 map("n", "<leader>bd", ":bufdo bd <CR>", { desc = "Delete all buffers" })
 map("n", "<leader>cc", ":CccPick<CR>", { desc = "Pick Color" })
 
+-- neoTree
+map("n", "<C-n>", ":Neotree toggle<CR>", { desc = "Toggle NeoTree" })
+
+map("n", "<C-p>", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
 --- unMap Tab used by tabufline
 vim.cmd ":unmap <Tab>"
 

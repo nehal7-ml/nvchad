@@ -1,4 +1,5 @@
 -- load defaults i.e lua_lsp
+local nvlsp = require "nvchad.configs.lspconfig"
 local lspconfig = require "lspconfig"
 vim.diagnostic.config {
   virtual_text = false,
@@ -49,8 +50,6 @@ local servers = {
   jsonls = {},
 }
 
-local nvlsp = require "nvchad.configs.lspconfig"
-
 for name, opts in pairs(servers) do
   opts.on_init = nvlsp.on_init
   opts.on_attach = nvlsp.on_attach
@@ -58,9 +57,6 @@ for name, opts in pairs(servers) do
 
   lspconfig[name].setup(opts)
 end
-require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls" }
-vim.lsp.enable(servers)
-
--- read :h vim.lsp.config for changing options of lsp servers 
+-- vim.lsp.enable(servers)
+-- read :h vim.lsp.config for changing options of lsp servers
