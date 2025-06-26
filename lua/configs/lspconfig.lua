@@ -29,7 +29,7 @@ local servers = {
             code_actions = { enable = true },
           },
           pycodestyle = {
-            ignore = { "W391" },
+            ignore = { "W391", "W503" },
             maxLineLength = 100,
           },
         },

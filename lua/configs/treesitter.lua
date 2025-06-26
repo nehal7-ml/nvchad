@@ -29,5 +29,6 @@ return {
     "html",
     "xml",
     "astro",
+    "nu",
   },
 }
