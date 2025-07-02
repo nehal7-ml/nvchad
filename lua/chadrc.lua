@@ -17,6 +17,7 @@ CM.base_30 = {
 
 M.base46 = {
   theme = "nightowl",
+  transparency = true,
   changed_themes = {
     nightowl = {
       base_30 = {
@@ -82,5 +83,9 @@ M.nvdash = {
     " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
     " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
   },
+}
+
+M.colorify = {
+  enabled = false,
 }
 return M
