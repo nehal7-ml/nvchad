@@ -13,5 +13,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Briefly highlight yanked text",
 })
 
-vim.opt.shell = "pwsh.exe"
+vim.opt.shell = "nu"
 vim.opt.relativenumber = true

@@ -21,8 +21,8 @@ M.base46 = {
   changed_themes = {
     nightowl = {
       base_30 = {
-        purple = "#bb9af7",
-        dark_purple = "#9d7cd8",
+        purple = CM.base_30.purple,
+        dark_purple = CM.base_30.dark_purple,
       },
       polish_hl = {
         treesitter = {
