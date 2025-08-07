@@ -3,6 +3,8 @@
 -- Please read that file to know all available options :(
 
 local utils = require "lib.utils"
+
+-- vim.o.winborder = "rounded"
 local M = {}
 
 local CM = {}

@@ -2,12 +2,12 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier", "eslint_d" },
-    html = { "prettier", "eslint_d" },
+    html = { "prettierd", "eslint_d" },
     js = { "dprint", "eslint_d" },
     ts = { "dprint", "eslint_d" },
     jsx = { "dprint", "eslint_d" },
     tsx = { "dprint", "eslint_d" },
-    json = { "prettied", "eslint_d" },
+    json = { "prettierd", "eslint_d" },
     yaml = { "prettierd", "eslint_d" },
     markdown = { "prettierd" },
     svelte = { "prettierd" },
@@ -15,10 +15,8 @@ local options = {
     python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
     php = { "php-cs-fixer" },
   },
-
-  opts = {
-    -- These options will be default config for formatters
-    prettier = {},
+  format = {
+    lsp_fallback = true,
   },
   formatters = {
     ["php-cs-fixer"] = {
@@ -36,7 +34,7 @@ local options = {
     -- These options will be passed to conform.format()
     async = true,
     timeout_ms = 2500,
-    lsp_fallback = true,
+    lsp_format = "first",
   },
 }
 
