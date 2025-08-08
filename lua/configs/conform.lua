@@ -1,14 +1,15 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettier", "eslint_d" },
-    html = { "prettierd", "eslint_d" },
-    js = { "dprint", "eslint_d" },
-    ts = { "dprint", "eslint_d" },
-    jsx = { "dprint", "eslint_d" },
-    tsx = { "dprint", "eslint_d" },
-    json = { "prettierd", "eslint_d" },
-    yaml = { "prettierd", "eslint_d" },
+    css = { "prettierd" },
+    html = { "prettierd" },
+    handlebars = { "hbs_with_partials", lsp_format = "fallback" },
+    javascript = { "eslint_d", "prettierd" },
+    typescript = { "eslint_d", "prettierd" },
+    javascriptreact = { "eslint_d", "prettierd" },
+    typescriptreact = { "eslint_d", "prettierd" },
+    json = { "eslint_d", "prettierd" },
+    yaml = { "eslint_d", "prettierd" },
     markdown = { "prettierd" },
     svelte = { "prettierd" },
     vue = { "prettierd" },
@@ -16,9 +17,19 @@ local options = {
     php = { "php-cs-fixer" },
   },
   format = {
+    async = true,
     lsp_fallback = true,
   },
   formatters = {
+    ["hbs_with_partials"] = {
+      command = "prettier",
+      args = {
+        "--parser",
+        "angular",
+        "--stdin-filepath",
+        "$FILENAME",
+      },
+    },
     ["php-cs-fixer"] = {
       command = "php-cs-fixer",
       args = {
